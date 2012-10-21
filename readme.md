@@ -1,0 +1,1 @@
+This is a reference project to show how to create a JavaScript module based on jQuery.
