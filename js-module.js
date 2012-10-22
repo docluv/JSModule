@@ -161,7 +161,7 @@ jsm1.extensionMethod().exampleFunc();
 } (jsModule, window));
 
 //you can now create a new instance of the child object like so:
-var child = jsModule(/*any params you need*/).ChileModule(/*any params you need*/);
+var child = jsModule(/*any params you need*/).ChildModule(/*any params you need*/);
 
 //or 
 
