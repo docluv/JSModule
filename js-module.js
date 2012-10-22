@@ -126,7 +126,6 @@ jsm1.extensionMethod();
 //and because you returned a this reference you can even do this!
 jsm1.extensionMethod().exampleFunc();
 
-
 //If you want to create a child module, you can do that as well.
 //Think of this like a jQuery Plugin
 (function (jsModule, window, undefined) {
@@ -162,7 +161,6 @@ jsm1.extensionMethod().exampleFunc();
 } (jsModule, window));
 
 //you can now create a new instance of the child object like so:
-
 var child = jsModule(/*any params you need*/).ChileModule(/*any params you need*/);
 
 //or 
@@ -171,7 +169,6 @@ var jsm2 = jsModule(),
     child2 = jsm2.ChildModule(/*any params you need*/);
 
 //Then you can call foo
-
 child2.foo("hello world!");
 
 //or heck you could even do this if you really wanted:
