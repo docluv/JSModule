@@ -28,11 +28,11 @@
             //and then just a simple little way to override the default settings.
             //I do encourage merging the values though.
             if(customSettings){
-                this.settings = customSettings;    
+                that.settings = customSettings;    
             }
             
             //you can set values in the object's init method, good for items with no definition
-            this.exampleVar = 0;
+            that.exampleVar = 0;
 
             //This is actually where jQuery select the DOM element(s) you are looking for and encapsulates them.
 
