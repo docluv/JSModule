@@ -14,7 +14,30 @@
         //notice we are calling the jsModule init method from the object's protype alias.
         //The customSettings parameter is passed to the init method. Remember to pass
         //any parameters along to the init method.
-        return new jsModule.fn.init(customSettings);
+        var that = new jsModule.fn.init(customSettings);
+
+            //here I had a delima. I want to show how to merge a custom settings object
+            //but I don't wan to rely on jQuery, Underscore or something else for this example.
+            //so I decided to show you what it would look like with a jQuery dependancy.
+
+            //this.settings = $.extend({}, this.settings, customSettings);
+
+            //for a lightweight library with an extend method see my dollarbill repository
+            //https://github.com/docluv/dollarbill
+            
+            //and then just a simple little way to override the default settings.
+            //I do encourage merging the values though.
+            if(customSettings){
+                this.settings = customSettings;    
+            }
+            
+            //you can set values in the object's init method, good for items with no definition
+            this.exampleVar = 0;
+
+            //This is actually where jQuery select the DOM element(s) you are looking for and encapsulates them.
+
+
+        return that;
     };
 
     //Create an alias to the module's prototype
@@ -28,24 +51,6 @@
         //gets everything started and returns a reference to the object.
         //notice it was called from the jsModule function definition above.
         init: function(customSettings) {
-
-            //here I had a delima. I want to show how to merge a custom settings object
-            //but I don't wan to rely on jQuery, Underscore or something else for this example.
-            //so I decided to show you what it would look like with a jQuery dependancy.
-
-            //this.settings = $.extend({}, this.settings, customSettings);
-
-            //and then just a simple little way to override the default settings.
-            //I do encourage merging the values though.
-            if(customSettings){
-                this.settings = customSettings;    
-            }
-            
-            //you can set values in the object's init method, good for items with no definition
-            this.exampleVar = 0;
-
-            //This is actually where jQuery select the DOM element(s) you are looking for and encapsulates them.
-
             //return a reference to itself so you can chain things later!
             return this;
         },
